@@ -46,8 +46,8 @@ public class CompanyR implements CompanyRepository {
     public void updateCompany(int id, Company company) {
         Session session = sessionFactory.getCurrentSession();
         Company company1 = findById(id);
-        company1.setCompanyName(company1.getCompanyName());
-        company1.setLocatedCountry(company1.getLocatedCountry());
+        company1.setCompanyName(company.getCompanyName());
+        company1.setLocatedCountry(company.getLocatedCountry());
         session.merge(company1);
     }
 

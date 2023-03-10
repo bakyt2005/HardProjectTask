@@ -6,6 +6,7 @@ import app.models.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,12 +53,20 @@ public class CompanyController {
     @GetMapping("/get/by/{id}")
     public String getById(Model model, @PathVariable int id) {
         Company company = companyRepository.findById(id);
+<<<<<<< HEAD
         model.addAttribute("person", company);
+=======
+        model.addAttribute("company", company);
+>>>>>>> 0617917 (Initial commit)
         return "find";
     }
 
     @GetMapping("/update/{id}")
+<<<<<<< HEAD
     public String updatePersonForm(@PathVariable("id") int id, Model model) {
+=======
+    public String updateCompanyForm(@PathVariable("id") int id, Model model) {
+>>>>>>> 0617917 (Initial commit)
         Company company = companyRepository.findById(id);
         model.addAttribute("company", company);
         return "update-company-form";
@@ -65,7 +74,11 @@ public class CompanyController {
 
     @PostMapping("/real/update/{id}")
     public String updateCompany(@RequestParam("companyName") String companyName, @RequestParam("locatedCountry") String locatedCountry, @PathVariable int id) {
+<<<<<<< HEAD
         Company company = new Company();
+=======
+        Company company = companyRepository.findById(id);
+>>>>>>> 0617917 (Initial commit)
         company.setCompanyName(companyName);
         company.setLocatedCountry(locatedCountry);
         companyRepository.updateCompany(id, company);

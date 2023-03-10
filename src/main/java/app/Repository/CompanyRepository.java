@@ -6,6 +6,7 @@ import app.models.Company;
 import java.util.List;
 
 public interface CompanyRepository {
+
     List<Company> findAll();
 
     Company findById(int id);
