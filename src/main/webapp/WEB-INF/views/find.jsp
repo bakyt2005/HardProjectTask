@@ -11,6 +11,21 @@
     <title>Title</title>
 </head>
 <body>
-
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>companyName</th>
+        <th>locatedCountry</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>${company.id}</td>
+        <td>${company.companyName}</td>
+        <td>${company.locatedCountry}</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
